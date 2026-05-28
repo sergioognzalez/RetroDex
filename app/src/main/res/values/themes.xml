@@ -1,0 +1,80 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ── Tema base ─────────────────────────────────────────── -->
+    <style name="Base.Theme.RetroDex" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorPrimaryVariant">@color/color_primary_dark</item>
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="colorSecondary">@color/color_neon_cyan</item>
+        <item name="colorSecondaryVariant">@color/color_neon_purple</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSurface">@color/color_surface_dark</item>
+        <item name="colorOnSurface">@color/color_text_primary</item>
+        <item name="android:windowBackground">@color/color_bg_dark</item>
+        <item name="android:statusBarColor">@color/color_bg_dark</item>
+        <item name="android:navigationBarColor">@color/color_bg_dark</item>
+    </style>
+
+    <style name="Theme.RetroDex" parent="Base.Theme.RetroDex" />
+
+    <!-- ── Toolbar ───────────────────────────────────────────── -->
+    <style name="RetroDex.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/color_surface_dark</item>
+        <item name="titleTextColor">@color/color_neon_cyan</item>
+        <item name="subtitleTextColor">@color/color_text_secondary</item>
+    </style>
+
+    <!-- ── TabLayout ─────────────────────────────────────────── -->
+    <style name="RetroDex.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:background">@color/color_surface_dark</item>
+        <item name="tabTextColor">@color/color_text_secondary</item>
+        <item name="tabSelectedTextColor">@color/color_neon_cyan</item>
+        <item name="tabIndicatorColor">@color/color_neon_cyan</item>
+        <item name="tabIndicatorHeight">3dp</item>
+    </style>
+
+    <!-- ── Card personaje ────────────────────────────────────── -->
+    <style name="RetroDex.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/color_card_bg</item>
+        <item name="cardElevation">8dp</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="strokeColor">@color/color_card_stroke</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- ── TextAppearance: Títulos ───────────────────────────── -->
+    <style name="RetroDex.TextTitle" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">@color/color_neon_cyan</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- ── TextAppearance: Subtítulos ───────────────────────── -->
+    <style name="RetroDex.TextSubtitle" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/color_text_secondary</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <!-- ── TextInputLayout ───────────────────────────────────── -->
+    <style name="RetroDex.TextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/color_primary</item>
+        <item name="hintTextColor">@color/color_text_secondary</item>
+        <item name="android:textColorHint">@color/color_text_hint</item>
+    </style>
+
+    <!-- ── Button ────────────────────────────────────────────── -->
+    <style name="RetroDex.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/color_primary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- ── Dialog (AlertDialog con tema oscuro) ──────────────── -->
+    <style name="RetroDex.Dialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorSurface">@color/color_surface_dark</item>
+        <item name="colorOnSurface">@color/color_text_primary</item>
+        <item name="colorPrimary">@color/color_neon_pink</item>
+    </style>
+
+</resources>

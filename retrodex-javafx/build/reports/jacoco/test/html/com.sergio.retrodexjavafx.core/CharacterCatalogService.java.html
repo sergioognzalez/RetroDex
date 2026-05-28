@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CharacterCatalogService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">retrodex-javafx</a> &gt; <a href="index.source.html" class="el_package">com.sergio.retrodexjavafx.core</a> &gt; <span class="el_source">CharacterCatalogService.java</span></div><h1>CharacterCatalogService.java</h1><pre class="source lang-java linenums">package com.sergio.retrodexjavafx.core;
+
+import com.sergio.retrodexjavafx.model.RetroCharacter;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+
+public class CharacterCatalogService {
+    public static final String ALL = &quot;Todos&quot;;
+    public static final String SORT_NAME_ASC = &quot;Nombre A-Z&quot;;
+    public static final String SORT_NAME_DESC = &quot;Nombre Z-A&quot;;
+    public static final String SORT_DECADE = &quot;Decada&quot;;
+
+<span class="fc" id="L16">    private final List&lt;RetroCharacter&gt; characters = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L17">    private int nextId = 1;</span>
+
+<span class="fc" id="L19">    public CharacterCatalogService() {</span>
+<span class="fc" id="L20">    }</span>
+
+    public CharacterCatalogService seedDefaults() {
+<span class="fc" id="L23">        add(&quot;Mario&quot;, &quot;80s&quot;, &quot;Videojuego&quot;, &quot;Super Mario Bros&quot;, &quot;Icono de Nintendo y de los plataformas.&quot;);</span>
+<span class="fc" id="L24">        add(&quot;Sonic&quot;, &quot;90s&quot;, &quot;Videojuego&quot;, &quot;Sonic The Hedgehog&quot;, &quot;El erizo azul de SEGA.&quot;);</span>
+<span class="fc" id="L25">        add(&quot;Goku&quot;, &quot;90s&quot;, &quot;Anime&quot;, &quot;Dragon Ball Z&quot;, &quot;Guerrero Saiyan que siempre supera sus limites.&quot;);</span>
+<span class="fc" id="L26">        add(&quot;Mazinger Z&quot;, &quot;70s&quot;, &quot;Anime&quot;, &quot;Mazinger Z&quot;, &quot;Robot clasico del anime mecha.&quot;);</span>
+<span class="fc" id="L27">        add(&quot;Bob Esponja&quot;, &quot;2000s&quot;, &quot;Animacion&quot;, &quot;Nickelodeon&quot;, &quot;La esponja mas optimista de Fondo de Bikini.&quot;);</span>
+<span class="fc" id="L28">        return this;</span>
+    }
+
+    public RetroCharacter add(String name,
+                              String decade,
+                              String category,
+                              String origin,
+                              String description) {
+<span class="fc" id="L36">        validateRequiredName(name);</span>
+<span class="fc" id="L37">        RetroCharacter character = new RetroCharacter(</span>
+                nextId++,
+<span class="fc" id="L39">                clean(name),</span>
+<span class="fc" id="L40">                clean(decade),</span>
+<span class="fc" id="L41">                clean(category),</span>
+<span class="fc" id="L42">                clean(origin),</span>
+<span class="fc" id="L43">                clean(description)</span>
+        );
+<span class="fc" id="L45">        characters.add(character);</span>
+<span class="fc" id="L46">        return character;</span>
+    }
+
+    public RetroCharacter update(int id,
+                                 String name,
+                                 String decade,
+                                 String category,
+                                 String origin,
+                                 String description) {
+<span class="fc" id="L55">        validateRequiredName(name);</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        for (int i = 0; i &lt; characters.size(); i++) {</span>
+<span class="fc" id="L57">            RetroCharacter current = characters.get(i);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">            if (current.getId() == id) {</span>
+<span class="fc" id="L59">                RetroCharacter updated = new RetroCharacter(</span>
+                        id,
+<span class="fc" id="L61">                        clean(name),</span>
+<span class="fc" id="L62">                        clean(decade),</span>
+<span class="fc" id="L63">                        clean(category),</span>
+<span class="fc" id="L64">                        clean(origin),</span>
+<span class="fc" id="L65">                        clean(description)</span>
+                );
+<span class="fc" id="L67">                characters.set(i, updated);</span>
+<span class="fc" id="L68">                return updated;</span>
+            }
+        }
+<span class="fc" id="L71">        throw new IllegalArgumentException(&quot;No existe un personaje con id &quot; + id);</span>
+    }
+
+    public boolean delete(int id) {
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        return characters.removeIf(character -&gt; character.getId() == id);</span>
+    }
+
+    public Optional&lt;RetroCharacter&gt; findById(int id) {
+<span class="fc" id="L79">        return characters.stream()</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">                .filter(character -&gt; character.getId() == id)</span>
+<span class="fc" id="L81">                .findFirst();</span>
+    }
+
+    public List&lt;RetroCharacter&gt; filter(String searchText,
+                                       String decade,
+                                       String category,
+                                       String sortMode) {
+<span class="fc" id="L88">        String normalizedSearch = clean(searchText).toLowerCase();</span>
+<span class="fc" id="L89">        List&lt;RetroCharacter&gt; result = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        for (RetroCharacter character : characters) {</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">            if (matchesSearch(character, normalizedSearch)</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">                    &amp;&amp; matchesOption(character.getDecade(), decade)</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">                    &amp;&amp; matchesOption(character.getCategory(), category)) {</span>
+<span class="fc" id="L95">                result.add(character);</span>
+            }
+<span class="fc" id="L97">        }</span>
+
+<span class="fc" id="L99">        result.sort(comparatorFor(sortMode));</span>
+<span class="fc" id="L100">        return result;</span>
+    }
+
+    public List&lt;RetroCharacter&gt; all() {
+<span class="fc" id="L104">        return filter(&quot;&quot;, ALL, ALL, SORT_DECADE);</span>
+    }
+
+    public String shareText(RetroCharacter character) {
+<span class="fc" id="L108">        return &quot;Descubre a &quot; + character.getName() + &quot; en RetroDex\n&quot;</span>
+<span class="fc" id="L109">                + &quot;Decada: &quot; + character.getDecade() + &quot;\n&quot;</span>
+<span class="fc" id="L110">                + &quot;Categoria: &quot; + character.getCategory() + &quot;\n&quot;</span>
+<span class="fc" id="L111">                + &quot;Origen: &quot; + character.getOrigin();</span>
+    }
+
+    public boolean isEmpty() {
+<span class="fc" id="L115">        return characters.isEmpty();</span>
+    }
+
+    private void validateRequiredName(String name) {
+<span class="fc bfc" id="L119" title="All 2 branches covered.">        if (clean(name).isEmpty()) {</span>
+<span class="fc" id="L120">            throw new IllegalArgumentException(&quot;El nombre es obligatorio&quot;);</span>
+        }
+<span class="fc" id="L122">    }</span>
+
+    private boolean matchesSearch(RetroCharacter character, String searchText) {
+<span class="fc bfc" id="L125" title="All 2 branches covered.">        return searchText.isEmpty()</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">                || character.getName().toLowerCase().contains(searchText)</span>
+<span class="fc bfc" id="L127" title="All 2 branches covered.">                || character.getOrigin().toLowerCase().contains(searchText);</span>
+    }
+
+    private boolean matchesOption(String value, String selectedOption) {
+<span class="fc" id="L131">        String option = clean(selectedOption);</span>
+<span class="fc bfc" id="L132" title="All 6 branches covered.">        return option.isEmpty() || ALL.equals(option) || value.equals(option);</span>
+    }
+
+    private Comparator&lt;RetroCharacter&gt; comparatorFor(String sortMode) {
+<span class="fc bfc" id="L136" title="All 2 branches covered.">        if (SORT_NAME_DESC.equals(sortMode)) {</span>
+<span class="fc" id="L137">            return Comparator.comparing(RetroCharacter::getName, String.CASE_INSENSITIVE_ORDER).reversed();</span>
+        }
+<span class="fc bfc" id="L139" title="All 2 branches covered.">        if (SORT_NAME_ASC.equals(sortMode)) {</span>
+<span class="fc" id="L140">            return Comparator.comparing(RetroCharacter::getName, String.CASE_INSENSITIVE_ORDER);</span>
+        }
+<span class="fc" id="L142">        return Comparator</span>
+<span class="fc" id="L143">                .comparingInt((RetroCharacter character) -&gt; decadeWeight(character.getDecade()))</span>
+<span class="fc" id="L144">                .thenComparing(RetroCharacter::getName, String.CASE_INSENSITIVE_ORDER);</span>
+    }
+
+    private int decadeWeight(String decade) {
+<span class="fc bfc" id="L148" title="All 5 branches covered.">        switch (decade) {</span>
+            case &quot;70s&quot;:
+<span class="fc" id="L150">                return 1;</span>
+            case &quot;80s&quot;:
+<span class="fc" id="L152">                return 2;</span>
+            case &quot;90s&quot;:
+<span class="fc" id="L154">                return 3;</span>
+            case &quot;2000s&quot;:
+<span class="fc" id="L156">                return 4;</span>
+            default:
+<span class="fc" id="L158">                return 5;</span>
+        }
+    }
+
+    private String clean(String value) {
+<span class="fc bfc" id="L163" title="All 2 branches covered.">        return value == null ? &quot;&quot; : value.trim();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

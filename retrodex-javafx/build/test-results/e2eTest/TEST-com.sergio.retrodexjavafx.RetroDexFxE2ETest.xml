@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sergio.retrodexjavafx.RetroDexFxE2ETest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-05-28T17:46:59.870Z" hostname="SERGIODAM" time="58.097">
+  <properties/>
+  <testcase name="userCreatesUpdatesSharesAndDeletesACharacter()" classname="com.sergio.retrodexjavafx.RetroDexFxE2ETest" time="35.691"/>
+  <testcase name="userNavigatesToolbarDialogsAndValidationMessages()" classname="com.sergio.retrodexjavafx.RetroDexFxE2ETest" time="12.711"/>
+  <testcase name="userSearchesFiltersSortsAndOpensACharacter()" classname="com.sergio.retrodexjavafx.RetroDexFxE2ETest" time="9.693"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[may 28, 2026 7:47:00 P. M. com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @2e6a8155'
+]]></system-err>
+</testsuite>

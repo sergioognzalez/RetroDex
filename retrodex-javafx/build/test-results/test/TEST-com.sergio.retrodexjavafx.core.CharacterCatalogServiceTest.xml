@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-05-28T17:31:48.852Z" hostname="SERGIODAM" time="0.127">
+  <properties/>
+  <testcase name="shareTextContainsVisibleCharacterData()" classname="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" time="0.063"/>
+  <testcase name="deleteAndFindByIdHandleExistingAndMissingCharacters()" classname="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" time="0.004"/>
+  <testcase name="addCleansInputAndAssignsIncrementalIds()" classname="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" time="0.006"/>
+  <testcase name="updateChangesExistingCharacterAndRejectsInvalidCases()" classname="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" time="0.01"/>
+  <testcase name="filterUsesDecadeCategoryAndEmptyOptions()" classname="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" time="0.003"/>
+  <testcase name="addRejectsBlankNames()" classname="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" time="0.003"/>
+  <testcase name="filterSearchesByNameAndOrigin()" classname="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" time="0.003"/>
+  <testcase name="newCatalogStartsEmptyAndSeedDefaultsLoadsCharacters()" classname="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" time="0.003"/>
+  <testcase name="sortModesOrderCharactersCorrectly()" classname="com.sergio.retrodexjavafx.core.CharacterCatalogServiceTest" time="0.013"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

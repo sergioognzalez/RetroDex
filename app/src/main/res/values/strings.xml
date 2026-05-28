@@ -1,0 +1,144 @@
+<resources>
+    <string name="app_name">RetroDex</string>
+    <string name="app_tagline">Enciclopedia retro de personajes</string>
+    <string name="app_version">Versión 1.0</string>
+
+    <string name="nav_header_title">RetroDex</string>
+    <string name="nav_header_subtitle">Catálogo retro interactivo</string>
+    <string name="nav_catalog">Catálogo</string>
+    <string name="nav_settings">Ajustes</string>
+    <string name="nav_about">Acerca de</string>
+    <string name="drawer_open">Abrir menú</string>
+    <string name="drawer_close">Cerrar menú</string>
+
+    <string name="tab_decades">Décadas</string>
+    <string name="tab_categories">Categorías</string>
+    <string name="filter_decade_label">DÉCADA</string>
+    <string name="filter_category_label">CATEGORÍA</string>
+
+    <string name="fab_add_character">Añadir personaje</string>
+
+    <string name="field_name">Nombre</string>
+    <string name="field_description">Descripción</string>
+    <string name="field_decade">Década</string>
+    <string name="field_category">Categoría</string>
+    <string name="field_origin">Serie / Plataforma de origen</string>
+    <string name="field_image">Imagen del personaje</string>
+
+    <string-array name="decades_array">
+        <item>Todas las décadas</item>
+        <item>70s</item>
+        <item>80s</item>
+        <item>90s</item>
+        <item>2000s</item>
+    </string-array>
+
+    <string-array name="decades_values">
+        <item>70s</item>
+        <item>80s</item>
+        <item>90s</item>
+        <item>2000s</item>
+    </string-array>
+
+    <string-array name="categories_array">
+        <item>Todas las categorías</item>
+        <item>Videojuego</item>
+        <item>Anime</item>
+        <item>Animación</item>
+    </string-array>
+
+    <string-array name="categories_values">
+        <item>Videojuego</item>
+        <item>Anime</item>
+        <item>Animación</item>
+    </string-array>
+
+    <string name="btn_save">Guardar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_edit">Editar</string>
+    <string name="btn_delete">Eliminar</string>
+    <string name="btn_share">Compartir</string>
+    <string name="btn_select_image">Seleccionar imagen</string>
+    <string name="btn_change_image">Cambiar imagen</string>
+
+    <string name="title_add_character">Nuevo personaje</string>
+    <string name="title_edit_character">Editar personaje</string>
+    <string name="hint_name">Ej: Mario, Sonic, Goku...</string>
+    <string name="hint_description">Descripción breve del personaje...</string>
+    <string name="hint_origin">Ej: Super Mario Bros, Dragon Ball Z...</string>
+
+    <string name="title_detail">Detalle del personaje</string>
+    <string name="label_origin">Origen</string>
+    <string name="label_decade">Década</string>
+    <string name="label_category">Categoría</string>
+
+    <string name="dialog_delete_title">¿Eliminar personaje?</string>
+    <string name="dialog_delete_message">Esta acción no se puede deshacer. ¿Seguro que quieres eliminar a %1$s?</string>
+    <string name="dialog_confirm">Eliminar</string>
+    <string name="dialog_cancel">Cancelar</string>
+
+    <string name="menu_edit">Editar</string>
+    <string name="menu_delete">Eliminar</string>
+    <string name="menu_share">Compartir</string>
+
+    <string name="toast_character_added">Personaje añadido al RetroDex.</string>
+    <string name="toast_character_updated">Personaje actualizado correctamente.</string>
+    <string name="snack_character_deleted">Personaje eliminado.</string>
+    <string name="snack_undo">Deshacer</string>
+    <string name="toast_error_name">El nombre no puede estar vacío.</string>
+    <string name="toast_error_save">Error al guardar. Inténtalo de nuevo.</string>
+    <string name="toast_notification_sent">Notificación enviada a todos los usuarios.</string>
+    <string name="toast_image_error">No se pudo cargar la imagen.</string>
+
+    <string name="share_title">Mira este personaje retro</string>
+    <string name="share_text">Acabo de descubrir a %1$s en RetroDex.\nDécada: %2$s | Categoría: %3$s\nOrigen: %4$s</string>
+
+    <string name="empty_title">Sin personajes</string>
+    <string name="empty_message">Pulsa el botón + para añadir tu primer personaje retro.</string>
+
+    <string name="settings_title">Ajustes</string>
+    <string name="pref_category_appearance">Apariencia</string>
+    <string name="pref_category_notifications">Notificaciones</string>
+    <string name="pref_theme_title">Tema oscuro</string>
+    <string name="pref_theme_summary">Activar o desactivar el tema oscuro</string>
+    <string name="pref_notifications_title">Notificaciones push</string>
+    <string name="pref_notifications_summary">Recibir notificaciones cuando se añaden personajes</string>
+    <string name="pref_sort_title">ORDEN DE VISUALIZACIÓN</string>
+    <string name="pref_sort_summary">Cómo ordenar los personajes en el catálogo</string>
+    <string-array name="pref_sort_entries">
+        <item>Nombre (A-Z)</item>
+        <item>Nombre (Z-A)</item>
+        <item>Por décadas</item>
+    </string-array>
+    <string-array name="pref_sort_values">
+        <item>name</item>
+        <item>name_desc</item>
+        <item>decade</item>
+    </string-array>
+    <string name="pref_sort_default">decade</string>
+
+    <string name="about_title">Acerca de RetroDex</string>
+    <string name="about_description">RetroDex es una enciclopedia interactiva de personajes icónicos del mundo retro: videojuegos clásicos, anime y dibujos animados de los años 70 al 2000.</string>
+    <string name="about_developer_label">Desarrollado por</string>
+    <string name="about_developer">Sergio González</string>
+    <string name="about_tech_label">Tecnologías</string>
+    <string name="about_tech">Android Studio · SQLite · Firebase FCM · Java</string>
+    <string name="about_notifications_label">Integración notificaciones</string>
+    <string name="about_notifications">Configurada por Sergio González</string>
+    <string name="about_notifications_file_label">Archivo servidor</string>
+    <string name="about_notifications_file">URL configurable en notif_server_url</string>
+    <string name="about_footer">Made with ♥ for @Maki_mousee</string>
+
+    <string name="notif_channel_id">retrodex_channel</string>
+    <string name="notif_channel_name">RetroDex Novedades</string>
+    <string name="notif_channel_desc">Notificaciones sobre nuevos personajes en RetroDex</string>
+    <string name="notif_default_body">Tienes novedades en el catálogo</string>
+    <string name="notif_new_character_title">Nuevo personaje en RetroDex</string>
+    <string name="notif_new_character_body">Se ha añadido %1$s al catálogo. Échale un vistazo.</string>
+    <string name="notif_server_url">https://agomcan.alwaysdata.net/enviarnotificacion.php</string>
+
+
+    <string name="menu_search">Buscar</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="menu_about">Acerca de</string>
+</resources>

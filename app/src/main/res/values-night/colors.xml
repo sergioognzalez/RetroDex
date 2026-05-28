@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="color_bg_dark">#0D001A</color>
+    <color name="color_surface_dark">#1A0033</color>
+    <color name="color_card_bg">#200040</color>
+
+    <color name="color_primary">#7B2FBE</color>
+    <color name="color_primary_dark">#4A0080</color>
+    <color name="color_on_primary">#FFFFFF</color>
+
+    <color name="color_neon_cyan">#00F5FF</color>
+    <color name="color_neon_pink">#FF2D78</color>
+    <color name="color_neon_purple">#BF00FF</color>
+    <color name="color_neon_green">#39FF14</color>
+    <color name="color_neon_yellow">#FFE500</color>
+
+    <color name="color_text_primary">#FFFFFF</color>
+    <color name="color_text_secondary">#C0A0E0</color>
+    <color name="color_text_hint">#806090</color>
+
+    <color name="color_cat_videojuego">#00F5FF</color>
+    <color name="color_cat_anime">#FF2D78</color>
+    <color name="color_cat_animacion">#39FF14</color>
+
+    <color name="color_dec_70s">#FFE500</color>
+    <color name="color_dec_80s">#FF2D78</color>
+    <color name="color_dec_90s">#00F5FF</color>
+    <color name="color_dec_2000s">#39FF14</color>
+
+    <color name="color_nav_header_start">#1A0033</color>
+    <color name="color_nav_header_end">#4A0080</color>
+
+    <color name="color_card_stroke">#7B2FBE</color>
+
+    <color name="color_overlay_dark">#CC000000</color>
+    <color name="color_chip_bg">#33BF00FF</color>
+</resources>
