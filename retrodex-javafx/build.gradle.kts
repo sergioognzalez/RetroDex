@@ -109,7 +109,6 @@ tasks.register<Test>("e2eTest") {
     useJUnitPlatform()
 
     systemProperty("testfx.robot", "glass")
-    systemProperty("testfx.headless", "true")
     systemProperty("prism.order", "sw")
     systemProperty("prism.text", "t2k")
     systemProperty("java.awt.headless", "false")
