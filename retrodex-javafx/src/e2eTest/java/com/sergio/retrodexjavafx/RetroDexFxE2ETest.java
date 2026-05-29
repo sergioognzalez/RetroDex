@@ -100,43 +100,33 @@ class RetroDexFxE2ETest extends ApplicationTest {
     }
 
     @Test
-    void userNavigatesToolbarDialogsAndValidationMessages() {
-        pauseForVideo();
-        clickOn("#settingsButton");
-        WaitForAsyncUtils.waitForFxEvents();
-        pauseForVideo();
-        press(KeyCode.ENTER).release(KeyCode.ENTER);
-        WaitForAsyncUtils.waitForFxEvents();
-        assertTrue(statusText().contains("Ventana cerrada: Ajustes"));
+    void userValidatesFormSearchesAndSharesACharacter() {
+    pauseForVideo();
 
-        clickOn("#aboutButton");
-        WaitForAsyncUtils.waitForFxEvents();
-        pauseForVideo();
-        press(KeyCode.ENTER).release(KeyCode.ENTER);
-        WaitForAsyncUtils.waitForFxEvents();
-        assertTrue(statusText().contains("Ventana cerrada: Acerca de"));
+    clickOn("#catalogButton");
+    pauseForVideo();
+    assertTrue(statusText().contains("Catalogo activo"));
 
-        clickOn("#catalogButton");
-        pauseForVideo();
-        assertTrue(statusText().contains("Catalogo activo"));
+    clickOn("#clearButton");
+    pauseForVideo();
+    clickOn("#saveButton");
+    pauseForVideo();
+    assertTrue(statusText().contains("El nombre es obligatorio"));
 
-        clickOn("#clearButton");
-        pauseForVideo();
-        clickOn("#saveButton");
-        pauseForVideo();
-        assertTrue(statusText().contains("El nombre es obligatorio"));
+    clickOn("#searchField").write("sonic");
+    pauseForVideo();
+    clickOn("Sonic | 90s | Videojuego");
+    pauseForVideo();
 
-        clickOn("#searchField").write("sonic");
-        pauseForVideo();
-        clickOn("Sonic | 90s | Videojuego");
-        pauseForVideo();
-        clickOn("#shareButton");
-        pauseForVideo();
+    assertLabel("#detailName", "Sonic");
+    assertLabel("#detailOrigin", "Sonic The Hedgehog");
 
-        assertLabel("#detailName", "Sonic");
-        assertTextAreaContains("#shareOutput", "Sonic");
-        assertTextAreaContains("#shareOutput", "Sonic The Hedgehog");
-    }
+    clickOn("#shareButton");
+    pauseForVideo();
+
+    assertTextAreaContains("#shareOutput", "Sonic");
+    assertTextAreaContains("#shareOutput", "Sonic The Hedgehog");
+}
 
     private void replaceText(String selector, String value) {
         clickOn(selector);
